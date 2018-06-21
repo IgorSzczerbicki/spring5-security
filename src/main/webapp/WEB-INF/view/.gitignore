@@ -1,0 +1,10 @@
+build/
+gradlew
+gradlew.bat
+.gradle/
+.settings/
+.project
+gradle/
+bin/
+.classpath
+src/main/java/hibernate.cfg.out.xml
