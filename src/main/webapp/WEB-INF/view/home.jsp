@@ -14,6 +14,9 @@
 	<p>User: <security:authentication property="principal.username"/></p>
 	<p>Roles: <security:authentication property="principal.authorities"/></p>
 	
+	<a href="${pageContext.request.contextPath}/leaders">Leaders</a><br/>
+	<a href="${pageContext.request.contextPath}/systems">Systems</a><br/>
+	
 	<form:form action="${pageContext.request.contextPath}/logout" method ="POST">
 		<input type="submit" value="logout" />
 	</form:form>
