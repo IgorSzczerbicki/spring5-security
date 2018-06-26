@@ -8,17 +8,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login form</title>
 <style type="text/css">
-.failed {
-	color: red;
-	font-weight: bold;
-}
+	.failed {
+		color: red;
+		font-weight: bold;
+	}
 </style>
 </head>
 <body>
 	<form:form action="${pageContext.request.contextPath}/authenticateUser"
 		method="POST">
 		<c:if test="${param.error != null}">
-			<i class="failed"> Login failed</i>
+			<i class="failed"> Login failed</i> 
 		</c:if>
 		<p>
 			User: <input type="text" name="username" />
@@ -26,6 +26,7 @@
 		<p>
 			Password: <input type="password" name="password" />
 		</p>
+
 		<input type="submit" value="Login" />
 	</form:form>
 </body>

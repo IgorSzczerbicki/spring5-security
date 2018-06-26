@@ -38,8 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		auth.inMemoryAuthentication()
 		.withUser(userBuilder.username("jan").password("test123").roles("EMPLOYEE"))
-		.withUser(userBuilder.username("marcin").password("test123").roles("MANAGER"))
-		.withUser(userBuilder.username("olga").password("test123").roles("ADMIN"));*/
+
+		.withUser(userBuilder.username("marcin").password("test123").roles("EMPLOYEE", "MANAGER"))
+		.withUser(userBuilder.username("olga").password("test123").roles("EMPLOYEE", "ADMIN"));*/
 	}
 
 	@Override
@@ -54,6 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/authenticateUser")
 				.permitAll()
 		.and()
-		.logout().permitAll();
+
+			.logout().permitAll()
+		.and()
+			.exceptionHandling().accessDeniedPage("/access-denied");
+		
 	}	
 }
